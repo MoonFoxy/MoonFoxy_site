@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    widows: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(10,25,49);
+    background: -moz-linear-gradient(180deg, rgba(10,25,49,1) 0%, rgba(24,90,219,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(10,25,49,1) 0%, rgba(24,90,219,1) 100%);
+    background: linear-gradient(180deg, rgba(10,25,49,1) 0%, rgba(24,90,219,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0A1931",endColorstr="#185ADB",GradientType=1);
+}
+
+/* background */
+
+/* =============================== RESET =============================== */
+
+body {
+    margin: 0;
+    background-color: #0A1931;
+    color: #EFEFEF;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+/* =============================== PARTICLES.JS CONTAINER =============================== */
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* =============================== TEXT UNSELECTABLE =============================== */
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+/* =============================== NAVBAR =============================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.navbar>div {
+    padding: 0 30px;
+    font-size: 20px;
+}
+
+.navbar .menu {
+    margin-right: auto;
+}
+
+.navbar .lang {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* =============================== SOCIAL MEDIA =============================== */
+
+.media ul {
+    position: absolute;
+    bottom: 250px;
+    left: -140px;
+    /* transform: rotate(-90deg); */
+}
+
+.media ul li {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    display: inline-block;
+    padding: 0 30px;
+    text-transform: uppercase;
+}
+
+/* =============================== TEXT =============================== */
+
+.text {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    /* transform: rotate(-90deg); */
+}
+
+.text h1 {
+    font-size: 120px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -10px;
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+    width: 600px;
+}
+
+.text h1 .hide--text {
+    position: absolute;
+}
+
+.text h2 {
+    content: "duality";
+    position: absolute;
+    top: 40px;
+    left: -80px;
+    color: #FFC947;
+    z-index: -1;
+    font-size: 150px;
+    opacity: 0;
+}
+
+.text h3 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    /* line-height: 1; */
+    position: relative;
+    overflow: hidden;
+    height: 80px;
+}
+
+.text h3 .hide--text {
+    position: absolute;
+}
+
+.text p {
+    width: 400px;
+    font-size: 12px;
+    margin-top: 30px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+}
+
+.text p .hide--text {
+    position: absolute;
+}
+
+/* =============================== AUTHOR =============================== */
+
+.author {
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    text-align: center;
+}
+
+.author img {
+    width: 200px;
+    opacity: 1;
+    /* transform: rotate(-90deg); */
+}
+
+.author p {
+    margin-top: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 900;
+    /* transform: rotate(180deg); */
+}
+
+/* =============================== BUTTONS =============================== */
+
+.button {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    margin: 0.5rem 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.button:hover {
+    transition: all 150ms linear;
+    filter: brightness(0.85)
+}
+
+.button:active {
+    transition: all 150ms linear;
+}
+
+.button:focus {
+    outline: 1px dotted #888888;
+    outline-offset: -4px;
+}
+
+.button.-regular {
+    color: #EFEFEF;
+}
+
+.button.-regular:hover {
+    color: #EFEFEF;
+    opacity: 1;
+}
+
+.button.-regular:active {
+    opacity: 1;
+}

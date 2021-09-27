@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tsukiko</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#FFF">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#FFF">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    </head>
+
+    <body>
+        <div id="particles-js"></div>
+            <!-- =============================== NAVBAR =============================== -->
+            <div class="navbar">
+                <div class="menu">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- <div class="lang">Eng</div> -->
+            </div>
+
+            <!-- =============================== TEXT =============================== -->
+            <div class="text unselectable">
+                <h1><span class="hide--text">Tsukiko</span></h1>
+                <h2 id="scene"><span data-depth="0.2">月狐</span></h2>
+                <h3>
+                    <span class="hide--text">🌕🦊</span>
+                </h3>
+                <!-- <p>
+                    <span id="paragraph" class="hide--text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae iaculis neque. In pulvinar augue et tortor
+                        laoreet scelerisque. Sed venenatis, lacus a vestibulum dapibus.
+                    </span>
+                </p> -->
+            </div>
+
+
+            <!-- =============================== AUTHOR =============================== -->
+            <div class="author">
+                <img id="avatar"
+                    src="https://cdn.discordapp.com/avatars/289418396867624960/c2f2df53288cd50a92f522b266b6150f.png?size=2048"
+                    alt="">
+                <p class="unselectable">Отсуки-ка (つ≧▽≦)つ</p>
+                <div class="button-container">
+                    <div class='button -regular center' style="background: #000000"><i class="fab fa-github"></i></div>
+                    <div class='button -regular center' style="background: #5865F2"><i class="fab fa-discord"></i></div>
+                    <div class='button -regular center' style="background: #2787F5"><i class="fab fa-vk"></i></div>
+                    <div class='button -regular center' style="background: #26A6E5"><i class="fab fa-telegram"></i></div>
+                    <div class='button -regular center' style="background: #26ABE1"><i class="fab fa-twitter"></i></div>
+                    <div class='button -regular center' style="background: #ED5F5F"><i class="fas fa-envelope"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+        <script src="animations.js"></script>
+        <script>
+            var scene = document.getElementById('scene', {
+                invertX: false,
+                invertY: false
+            });
+            var parallax = new Parallax(scene);
+            isMobile = navigator.userAgent.match(/(iPhone|iPod|Android|BlackBerry|iPad|IEMobile|Opera Mini)/); if (!isMobile) {
+                VanillaTilt.init(document.querySelectorAll("#avatar"), {
+                    reverse: true,
+                    max: 15,
+                    glare: true,
+                    "max-glare": 2.5,
+                    gyroscope: false,
+                });
+            }
+        </script>
+    </body>
+</html>
