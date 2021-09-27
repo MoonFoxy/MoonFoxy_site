@@ -1,19 +1,19 @@
 // Element animations
 
-anime.timeline().add({ //toni&guy
+anime.timeline().add({
     targets: ".text h1 .hide--text",
     duration: 1000,
     translateY: ["100%", 0],
     easing: "easeOutExpo",
 }).add({
-    targets: ".text h2", //duality
+    targets: ".text h2",
     duration: 1500,
     opacity: [0, 1],
     translateX: ["-10000px", 0],
     easing: "easeOutExpo",
 });
 
-anime({ // COLLECTION 2017 DUALITY
+anime({
     targets: ".text h3 .hide--text",
     duration: 800,
     translateY: ["100%", 0],
@@ -42,7 +42,7 @@ anime.timeline({ loop: false }).add({
 particlesJS("particles-js", {
     "particles": {
         "number": {
-            "value": 1000,
+            "value": 355,
             "density": {
                 "enable": true,
                 "value_area": 789.1476416322727
