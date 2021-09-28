@@ -127,9 +127,9 @@ ul {
 }
 
 .text h2 {
-    font-size: 9rem;
+    font-size: 10rem;
     position: absolute;
-    top: 0.3em;
+    top: 0.2em;
     left: -0.5em;
     color: #FFC947;
     z-index: -1;
