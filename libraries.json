@@ -1,0 +1,22 @@
+[
+    {
+        "name": "parallax",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js",
+        "version": "3.1.0"
+    },
+    {
+        "name": "anime.js",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js",
+        "version": "3.2.1"
+    },
+    {
+        "name": "vanilla-tilt",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js",
+        "version": "1.7.2"
+    },
+    {
+        "name": "particles.js",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js",
+        "version": "2.0.0"
+    }
+]

@@ -6,9 +6,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    widows: 100%;
-    height: 100vh;
-    overflow: hidden;
+    /* =============================== BACKGROUND =============================== */
     background: rgb(10,25,49);
     background: -moz-linear-gradient(180deg, rgba(10,25,49,1) 0%, rgba(24,90,219,1) 100%);
     background: -webkit-linear-gradient(180deg, rgba(10,25,49,1) 0%, rgba(24,90,219,1) 100%);
@@ -16,19 +14,24 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0A1931",endColorstr="#185ADB",GradientType=1);
 }
 
-/* background */
-
 /* =============================== RESET =============================== */
 
 body {
     margin: 0;
     background-color: #0A1931;
     color: #EFEFEF;
+    widows: 100%;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-size: 100%;
 }
 
 canvas {
     display: block;
-    vertical-align: bottom;
+    width: 100%;
+    height: 100%;
+    /* vertical-align: bottom; */
 }
 
 /* =============================== PARTICLES.JS CONTAINER =============================== */
@@ -60,15 +63,15 @@ ul {
 .navbar {
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    height: 5rem;
     align-items: center;
     overflow: hidden;
     opacity: 1;
 }
 
 .navbar>div {
-    padding: 0 30px;
-    font-size: 20px;
+    font-size: 1.2rem;
+    padding: 0 1.5em;
 }
 
 .navbar .menu {
@@ -76,26 +79,26 @@ ul {
 }
 
 .navbar .lang {
-    font-size: 10px;
+    font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-/* =============================== SOCIAL MEDIA =============================== */
+/* =============================== SOCIAL MEDIA (NAVBAR) =============================== */
 
 .media ul {
     position: absolute;
-    bottom: 250px;
-    left: -140px;
-    /* transform: rotate(-90deg); */
+    bottom: 15.6rem;
+    left: 8.75rem;
+    width: 100%;
 }
 
 .media ul li {
-    font-size: 10px;
+    font-size: 0.6rem;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 0.2em;
     display: inline-block;
-    padding: 0 30px;
+    padding: 0 3em;
     text-transform: uppercase;
 }
 
@@ -103,20 +106,20 @@ ul {
 
 .text {
     position: absolute;
-    top: 200px;
-    left: 100px;
+    top: 28vh;
+    left: 7vw;
     /* transform: rotate(-90deg); */
 }
 
 .text h1 {
-    font-size: 120px;
+    font-size: 7.5rem;
     text-transform: uppercase;
     font-weight: 900;
-    letter-spacing: -10px;
+    letter-spacing: -0.08em;
     position: relative;
     overflow: hidden;
-    height: 150px;
-    width: 600px;
+    height: 1.25em;
+    width: 5em;
 }
 
 .text h1 .hide--text {
@@ -124,24 +127,23 @@ ul {
 }
 
 .text h2 {
-    content: "duality";
+    font-size: 9rem;
     position: absolute;
-    top: 40px;
-    left: -80px;
+    top: 0.3em;
+    left: -0.5em;
     color: #FFC947;
     z-index: -1;
-    font-size: 150px;
     opacity: 0;
 }
 
 .text h3 {
-    font-size: 40px;
+    font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: 600;
-    /* line-height: 1; */
+    line-height: 1.4;
     position: relative;
     overflow: hidden;
-    height: 80px;
+    height: 3.75em;
 }
 
 .text h3 .hide--text {
@@ -149,13 +151,13 @@ ul {
 }
 
 .text p {
-    width: 400px;
-    font-size: 12px;
-    margin-top: 30px;
+    font-size: 0.75rem;
+    width: 25em;
+    margin-top: 1.875em;
     font-weight: 500;
     position: relative;
     overflow: hidden;
-    height: 100px;
+    height: 6.25em;
 }
 
 .text p .hide--text {
@@ -166,55 +168,88 @@ ul {
 
 .author {
     position: absolute;
-    right: 100px;
-    bottom: 100px;
+    right: 7vw;
+    bottom: 12vh;
     text-align: center;
 }
 
 .author img {
-    width: 200px;
+    width: 16em;
     opacity: 1;
-    /* transform: rotate(-90deg); */
+    cursor: crosshair;
 }
 
 .author p {
-    margin-top: 20px;
-    font-size: 12px;
+    font-size: 0.75rem;
+    margin-top: 1.25em;
     text-transform: uppercase;
     font-weight: 900;
-    /* transform: rotate(180deg); */
+    letter-spacing: 0.04em;
+}
+
+/* =============================== STICKER =============================== */
+
+.sticker{
+    position: absolute;
+    left: -2rem;
+    bottom: -5rem;
+    transform: rotate(10deg);
+    text-align: center;
+}
+
+.sticker img {
+    width: 20rem;
+    opacity: 1;
 }
 
 /* =============================== BUTTONS =============================== */
 
+.button-container {
+    display: flex;
+    margin: 1em auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .button {
+    font-size: 1.25rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     display: flex;
+    flex-direction: column;
     overflow: hidden;
     align-items: center;
     justify-content: center;
+    user-select: none;
     position: relative;
     width: 2em;
     height: 2em;
-    margin: 0.5rem 0.5rem;
+    margin: 0.2em;
     border-radius: 50%;
-    cursor: pointer;
-    font-size: 1rem;
-    text-decoration: none;
+    white-space: nowrap;
+    text-decoration: none !important;
+    text-transform: none;
+    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    transition: all 150ms linear;
 }
 
 .button:hover {
+    font-size: 1.35rem;
+    filter: brightness(0.85);
     transition: all 150ms linear;
-    filter: brightness(0.85)
 }
 
 .button:active {
-    transition: all 150ms linear;
+    font-size: 1.3rem;
+    filter: brightness(0.75);
+    cursor: grabbing;
+    transition: all 50ms linear;
 }
 
 .button:focus {
-    outline: 1px dotted #888888;
-    outline-offset: -4px;
+    font-size: 1.35rem;
+    outline: 0.06rem dotted #888888;
+    outline-offset: -0.25rem;
 }
 
 .button.-regular {
@@ -228,4 +263,56 @@ ul {
 
 .button.-regular:active {
     opacity: 1;
+}
+
+/* =============================== TOOLTIP =============================== */
+/* TODO: Copy to Clipboard tooltip alert */
+
+.tooltip {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.tooltip span {
+  border-bottom: 1px dotted;
+}
+.tooltip:after {
+  content: attr(data-tooltip);
+  background: var(#e8e9e9);
+  max-width: 90%;
+  width: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+  height: auto;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 6px;
+  color: #999;
+  text-align: center;
+}
+.tooltip.dark:after {
+  background: #4d5052;
+  color: #ddd;
+}
+.tooltip.top:after {
+  bottom: 80%;
+  transition: opacity 0.3s ease 0.3s, bottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+}
+.tooltip.top:hover:after, .tooltip.top.hovered:after {
+  bottom: 130%;
+  opacity: 1;
+}
+.tooltip.bottom:after {
+  top: 80%;
+  transition: opacity 0.3s ease 0.3s, top 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+}
+.tooltip.bottom:hover:after, .tooltip.bottom.hovered:after {
+  top: 130%;
+  opacity: 1;
 }

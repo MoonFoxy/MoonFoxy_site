@@ -25,7 +25,10 @@
     </head>
 
     <body>
+
         <div id="particles-js"></div>
+        <canvas class="fireworks"></canvas>
+
             <!-- =============================== NAVBAR =============================== -->
             <div class="navbar">
                 <div class="menu">
@@ -34,36 +37,38 @@
                 <!-- <div class="lang">Eng</div> -->
             </div>
 
+            <!-- =============================== STICKER =============================== -->
+            <div class="sticker">
+                <img id="sticker" src="images/sticker.png" alt="Sticker">
+            </div>
+
+            <!-- =============================== AUTHOR =============================== -->
+            <div class="author">
+                <img id="avatar" src="images/avatar.png" alt="Avatar">
+                <p class="unselectable">Отсуки-ка (つ≧▽≦)つ</p>
+                <div class="button-container"  href="https://github.com/MoonFoxy">
+                    <a class='button -regular center' style="background: #161B22" href="https://github.com/MoonFoxy" target="_blank"><i class="fab fa-github"></i></a>
+                    <a class='button -regular center' style="background: #5865F2" onclick="copyToClipboard('Tsukiko#6595')"><i class="fab fa-discord"></i></a>
+                    <a class='button -regular center' style="background: #2787F5" href="https://vk.com/tsukiko_moe" target="_blank"><i class="fab fa-vk"></i></a>
+                    <a class='button -regular center' style="background: #26A6E5" href="https://t.me/MoonFoxy" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a class='button -regular center' style="background: #26ABE1" href="https://twitter.com/_MoonFoxy" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a class='button -regular center' style="background: #ED5F5F" href="mailto:contact@tsukiko.tech" target="_blank"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
             <!-- =============================== TEXT =============================== -->
             <div class="text unselectable">
                 <h1><span class="hide--text">Tsukiko</span></h1>
-                <h2 id="scene"><span data-depth="0.2">月狐</span></h2>
+                <h2 id="scene"><span data-depth="0.5">月狐</span></h2>
                 <h3>
                     <span class="hide--text">🌕🦊</span>
                 </h3>
                 <!-- <p>
-                    <span id="paragraph" class="hide--text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae iaculis neque. In pulvinar augue et tortor
-                        laoreet scelerisque. Sed venenatis, lacus a vestibulum dapibus.
-                    </span>
-                </p> -->
-            </div>
-
-
-            <!-- =============================== AUTHOR =============================== -->
-            <div class="author">
-                <img id="avatar"
-                    src="https://cdn.discordapp.com/avatars/289418396867624960/c2f2df53288cd50a92f522b266b6150f.png?size=2048"
-                    alt="">
-                <p class="unselectable">Отсуки-ка (つ≧▽≦)つ</p>
-                <div class="button-container">
-                    <div class='button -regular center' style="background: #000000"><i class="fab fa-github"></i></div>
-                    <div class='button -regular center' style="background: #5865F2"><i class="fab fa-discord"></i></div>
-                    <div class='button -regular center' style="background: #2787F5"><i class="fab fa-vk"></i></div>
-                    <div class='button -regular center' style="background: #26A6E5"><i class="fab fa-telegram"></i></div>
-                    <div class='button -regular center' style="background: #26ABE1"><i class="fab fa-twitter"></i></div>
-                    <div class='button -regular center' style="background: #ED5F5F"><i class="fas fa-envelope"></i></div>
-                </div>
+                        <span id="paragraph" class="hide--text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae iaculis neque. In pulvinar augue et tortor
+                            laoreet scelerisque. Sed venenatis, lacus a vestibulum dapibus.
+                        </span>
+                    </p> -->
             </div>
         </div>
 
@@ -72,21 +77,5 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
         <script src="animations.js"></script>
-        <script>
-            var scene = document.getElementById('scene', {
-                invertX: false,
-                invertY: false
-            });
-            var parallax = new Parallax(scene);
-            isMobile = navigator.userAgent.match(/(iPhone|iPod|Android|BlackBerry|iPad|IEMobile|Opera Mini)/); if (!isMobile) {
-                VanillaTilt.init(document.querySelectorAll("#avatar"), {
-                    reverse: true,
-                    max: 15,
-                    glare: true,
-                    "max-glare": 2.5,
-                    gyroscope: false,
-                });
-            }
-        </script>
     </body>
 </html>
