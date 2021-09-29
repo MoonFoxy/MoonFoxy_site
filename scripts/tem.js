@@ -10,10 +10,12 @@ let temmieMessages = [
     '*Temmiy accidentally misspells her own name*'
 ];
 
-function temMessage(){
+function temMessage() {
     document.getElementById('message').innerHTML = temmieMessages[Math.floor(temmieMessages.length * Math.random())];
 }
 
 temMessage();
 
-document.getElementById('temCont').addEventListener('click', function() { temMessage(); }, true);
+document.title = window.location.pathname.replace(/\//gm, '');  // Remove all slashes from the URL path and set it as the page title
+document.addEventListener('click', function() { temMessage(); }, true);
+// document.getElementById('temCont').addEventListener('click', function() { temMessage(); }, true);
