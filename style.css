@@ -20,7 +20,6 @@ body {
     margin: 0;
     background-color: #0A1931;
     color: #EFEFEF;
-    widows: 100%;
     height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -46,16 +45,16 @@ ul {
     list-style-type: none;
 }
 
-/* =============================== TEXT UNSELECTABLE =============================== */
+/* =============================== UNSELECTABLE =============================== */
 
 .unselectable {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -webkit-user-drag: none;    /* Chrome/Safari/Opera */
   -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge */
-  user-select: none;           /* Non-prefixed version, currently
-                                  not supported by any browser */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;    /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 /* =============================== NAVBAR =============================== */
