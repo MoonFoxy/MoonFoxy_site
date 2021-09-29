@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+@-webkit-keyframes temFaceVibe {
+  0% {
+    top: 73px;
+    left: 52px;
+  }
+  20% {
+    top: 71px;
+    left: 52px;
+  }
+  40% {
+    top: 71px;
+    left: 49px;
+  }
+  60% {
+    top: 72px;
+    left: 50px;
+  }
+  80% {
+    top: 71px;
+    left: 50px;
+  }
+  100% {
+    top: 74px;
+    left: 53px;
+  }
+}
+
+@keyframes temFaceVibe {
+  0% {
+    top: 73px;
+    left: 52px;
+  }
+  20% {
+    top: 71px;
+    left: 52px;
+  }
+  40% {
+    top: 71px;
+    left: 49px;
+  }
+  60% {
+    top: 72px;
+    left: 50px;
+  }
+  80% {
+    top: 71px;
+    left: 50px;
+  }
+  100% {
+    top: 74px;
+    left: 53px;
+  }
+}
+
+@-webkit-keyframes temVibe {
+  0% {
+    top: 1px;
+    left: -1px;
+  }
+  20% {
+    top: -1px;
+    left: 0px;
+  }
+  40% {
+    top: 1px;
+    left: -1px;
+  }
+  60% {
+    top: 1px;
+    left: 1px;
+  }
+  80% {
+    top: -1px;
+    left: 0px;
+  }
+  100% {
+    top: 1px;
+    left: 1px;
+  }
+}
+
+@keyframes temVibe {
+  0% {
+    top: 1px;
+    left: -1px;
+  }
+  20% {
+    top: -1px;
+    left: 0px;
+  }
+  40% {
+    top: 1px;
+    left: -1px;
+  }
+  60% {
+    top: 1px;
+    left: 1px;
+  }
+  80% {
+    top: -1px;
+    left: 0px;
+  }
+  100% {
+    top: 1px;
+    left: 1px;
+  }
+}
+
+body {
+  background-color: black;
+  text-align: center;
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -webkit-user-drag: none;    /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;    /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+#temCont {
+  position: relative;
+  margin: 30px auto;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-animation: temVibe 0.25s infinite;
+          animation: temVibe 0.25s infinite;
+  -webkit-animation-timing-function: steps(1, end);
+          animation-timing-function: steps(1, end);
+}
+
+#message {
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+}
+
+#temFace {
+  position: absolute;
+  top: 74px;
+  left: 50px;
+  -webkit-animation: temFaceVibe 0.25s infinite;
+          animation: temFaceVibe 0.25s infinite;
+  -webkit-animation-timing-function: steps(1, end);
+          animation-timing-function: steps(1, end);
+}
+
+.pixelArt {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: pixelated;
+}
