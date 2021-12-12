@@ -14,6 +14,32 @@ function copyToClipboard(text) {
 }
 
 /**
+ * Random color generator
+ */
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function getRandomPastelColor(){
+  return "hsl(" + 360 * Math.random() + ',' +
+             (25 + 70 * Math.random()) + '%,' +
+             (85 + 10 * Math.random()) + '%)'
+}
+
+function getRandomSaturatedColor(){
+  return "hsl(" + 360 * Math.random() + ',' +
+             (85 + 10 * Math.random()) + '%,' +
+             (25 + 70 * Math.random()) + '%)'
+}
+
+
+/**
  * Element animations
  */
 
@@ -58,8 +84,8 @@ anime.timeline({ loop: false }).add({
  * Parallax
  */
 
-let scene = document.getElementById('scene', { invertX: false, invertY: false });
-let parallax = new Parallax(scene);
+let scene = document.getElementById('scene');
+let parallax = new Parallax(scene, { invertX: true, invertY: true });
 
 /**
  * Image tilt
@@ -69,7 +95,7 @@ let isMobile = navigator.userAgent.match(/(iPhone|iPod|Android|BlackBerry|iPad|I
 if (!isMobile) {
     VanillaTilt.init(document.querySelectorAll("#avatar"), {
         reverse: true,
-        max: 15,
+        max: 5,
         glare: true,
         "max-glare": 2.5,
         gyroscope: false,
@@ -80,116 +106,7 @@ if (!isMobile) {
  * Background particles
  */
 
-particlesJS('particles-js', {
-    'particles': {
-        'number': {
-            'value': 650,
-            'density': {
-                'enable': true,
-                'value_area': 789.1476416322727
-            }
-        },
-        'color': {
-            'value': '#ffffff'
-        },
-        'shape': {
-            'type': 'circle',
-            'stroke': {
-                'width': 0,
-                'color': '#000000'
-            },
-            'polygon': {
-                'nb_sides': 5
-            },
-            'image': {
-                'src': 'img/github.svg',
-                'width': 100,
-                'height': 100
-            }
-        },
-        'opacity': {
-            'value': 0.48927153781200905,
-            'random': false,
-            'anim': {
-                'enable': true,
-                'speed': 0.2,
-                'opacity_min': 0,
-                'sync': false
-            }
-        },
-        'size': {
-            'value': 2,
-            'random': true,
-            'anim': {
-                'enable': true,
-                'speed': 2,
-                'size_min': 0,
-                'sync': false
-            }
-        },
-        'line_linked': {
-            'enable': false,
-            'distance': 150,
-            'color': '#ffffff',
-            'opacity': 0.4,
-            'width': 1
-        },
-        'move': {
-            'enable': true,
-            'speed': 0.2,
-            'direction': 'none',
-            'random': true,
-            'straight': false,
-            'out_mode': 'out',
-            'bounce': false,
-            'attract': {
-                'enable': false,
-                'rotateX': 600,
-                'rotateY': 1200
-            }
-        }
-    },
-    'interactivity': {
-        'detect_on': 'canvas',
-        'events': {
-            'onhover': {
-                'enable': true,
-                'mode': 'bubble'
-            },
-            'onclick': {
-                'enable': true,
-                'mode': 'push'
-            },
-            'resize': true
-        },
-        'modes': {
-            'grab': {
-                'distance': 400,
-                'line_linked': {
-                    'opacity': 1
-                }
-            },
-            'bubble': {
-                'distance': 83.91608391608392,
-                'size': 1,
-                'duration': 3,
-                'opacity': 1,
-                'speed': 3
-            },
-            'repulse': {
-                'distance': 200,
-                'duration': 0.4
-            },
-            'push': {
-                'particles_nb': 4
-            },
-            'remove': {
-                'particles_nb': 2
-            }
-        }
-    },
-    'retina_detect': true
-});
+particlesJS('particles-js', particlesConfig);
 
 /**
  * Fireworks particles animations
@@ -197,20 +114,19 @@ particlesJS('particles-js', {
 
 window.human = false;
 
-let canvasEl = document.querySelector('.fireworks');
-let ctx = canvasEl.getContext('2d');
-let numberOfParticles = 30;
+let canvasFirework = document.querySelector('.fireworks');
+let ctx = canvasFirework.getContext('2d');
+let numberOfParticles = 50;
 let pointerX = 0;
 let pointerY = 0;
 let tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
-let colors = ['#CE2029', '#FFFCAF', '#FFE17C', '#FF664B', '#903843'];
 
 function setCanvasSize() {
-    canvasEl.width = window.innerWidth * 2;
-    canvasEl.height = window.innerHeight * 2;
-    canvasEl.style.width = window.innerWidth;
-    canvasEl.style.height = window.innerHeight;
-    canvasEl.getContext('2d').scale(2, 2);
+    canvasFirework.width = window.innerWidth * 2;
+    canvasFirework.height = window.innerHeight * 2;
+    canvasFirework.style.width = window.innerWidth;
+    canvasFirework.style.height = window.innerHeight;
+    canvasFirework.getContext('2d').scale(2, 2);
 }
 
 function updateCoords(e) {
@@ -221,19 +137,19 @@ function updateCoords(e) {
 function setParticleDirection(p) {
     let angle = anime.random(0, 360) * Math.PI / 180;
     let value = anime.random(50, 180);
-    let radius = [-1, 1][anime.random(0, 1)] * value;
+    let radius = [-1.5, 1.5][anime.random(0, 1)] * value;
     return {
         x: p.x + radius * Math.cos(angle),
         y: p.y + radius * Math.sin(angle)
     }
 }
 
-function createParticle(x,y) {
+function createParticle(x, y, pColors) {
     let p = {};
     p.x = x;
     p.y = y;
-    p.color = colors[anime.random(0, colors.length - 1)];
-    p.radius = anime.random(9, 24);
+    p.color = pColors[anime.random(0, pColors.length - 1)];
+    p.radius = anime.random(12, 24);
     p.alpha = anime.random(0.9, 1);
     p.endPos = setParticleDirection(p);
     p.draw = function() {
@@ -246,14 +162,14 @@ function createParticle(x,y) {
     return p;
 }
 
-function createCircle(x,y) {
+function createCircle(x, y) {
     let p = {};
     p.x = x;
     p.y = y;
     p.color = '#FFF';
     p.radius = 0.1;
-    p.alpha = 0.5;
-    p.lineWidth = 6;
+    p.alpha = 0.2;
+    p.lineWidth = 20;
     p.draw = function() {
         ctx.globalAlpha = p.alpha;
         ctx.beginPath();
@@ -273,10 +189,15 @@ function renderParticle(anim) {
 }
 
 function animateParticles(x, y) {
+    let pColors = [];
+    for (let i = 0; i < 3; i++) {
+        pColors.push(getRandomSaturatedColor());
+    }
+
     let circle = createCircle(x, y);
     let particles = [];
     for (let i = 0; i < numberOfParticles; i++) {
-        particles.push(createParticle(x, y));
+        particles.push(createParticle(x, y, pColors));
     }
 
     anime.timeline().add({
@@ -296,7 +217,7 @@ function animateParticles(x, y) {
 
     anime.timeline().add({
         targets: circle,
-        radius: anime.random(60, 160),
+        radius: anime.random(60, 260),
         lineWidth: 0,
         alpha: {
             value: 0,
@@ -312,7 +233,7 @@ function animateParticles(x, y) {
 let render = anime({
     duration: Infinity,
     update: function() {
-        ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+        ctx.clearRect(0, 0, canvasFirework.width, canvasFirework.height);
     }
 });
 
@@ -332,6 +253,6 @@ function autoClick() {
     anime({ duration: anime.random(0, 1000) }).finished.then(autoClick);
 }
 
-autoClick();
+window.onload = autoClick();
 setCanvasSize();
 window.addEventListener('resize', setCanvasSize, false);
