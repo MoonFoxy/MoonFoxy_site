@@ -214,7 +214,7 @@ ul {
 }
 
 .button:hover {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     filter: brightness(0.85);
     transition: all 150ms linear;
 }
@@ -227,7 +227,6 @@ ul {
 }
 
 .button:focus {
-    font-size: 1.35rem;
     outline: 0.06rem dotted #888888;
     outline-offset: -0.25rem;
 }
@@ -302,6 +301,43 @@ ul {
 .tooltip.bottom:hover:after, .tooltip.bottom.hovered:after {
   top: 130%;
   opacity: 1;
+}
+
+/* =============================== MARQUEE =============================== */
+
+.marquee {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee span {
+    color: #212121;
+    font-size: 25px;
+    display: inline-block;
+    padding-left: 100%;
+    -webkit-animation: marquee 10s infinite linear;
+    animation: marquee 10s infinite linear;
+}
+
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%, 0);
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0)
+    }
 }
 
 /* =============================== SNOW LAYER =============================== */

@@ -116,7 +116,7 @@ window.human = false;
 
 let canvasFirework = document.querySelector('.fireworks');
 let ctx = canvasFirework.getContext('2d');
-let numberOfParticles = 50;
+let numberOfParticles = 20;
 let pointerX = 0;
 let pointerY = 0;
 let tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
