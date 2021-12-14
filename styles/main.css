@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -92,10 +94,10 @@ ul {
 }
 
 .text h1 {
-    font-size: 7.5rem;
+    font-size: 8.5rem;
     text-transform: uppercase;
     font-weight: 900;
-    letter-spacing: -0.08em;
+    letter-spacing: -0.05em;
     position: relative;
     overflow: hidden;
     height: 1.25em;
@@ -154,13 +156,13 @@ ul {
 }
 
 .author img {
-    width: 20em;
+    width: 25em;
     opacity: 1;
     cursor: crosshair;
 }
 
 .author p {
-    font-size: 0.75rem;
+    font-size: 1rem;
     margin-top: 1.25em;
     text-transform: uppercase;
     font-weight: 900;
@@ -192,7 +194,7 @@ ul {
 }
 
 .button {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     display: flex;
     flex-direction: column;
@@ -214,13 +216,13 @@ ul {
 }
 
 .button:hover {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     filter: brightness(0.85);
     transition: all 150ms linear;
 }
 
 .button:active {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     filter: brightness(0.75);
     cursor: grabbing;
     transition: all 50ms linear;
@@ -306,6 +308,8 @@ ul {
 /* =============================== MARQUEE =============================== */
 
 .marquee {
+    position: absolute;
+    top: 0%;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;

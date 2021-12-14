@@ -43,10 +43,11 @@ function getRandomSaturatedColor(){
  * Element animations
  */
 
-anime.timeline().add({
-    targets: '.text h1 .hide--text',
-    duration: 1000,
-    translateY: ['150%', 0],
+window.onload = anime.timeline().add({
+    targets: '.text h1',
+    duration: 1300,
+    scaleX: ['1200%', '100%'],
+    scaleY: ['100%', '120%'],
     easing: 'easeOutExpo',
 }).add({
     targets: '.text h2',
@@ -56,20 +57,20 @@ anime.timeline().add({
     easing: 'easeOutExpo',
 });
 
-anime({
-    targets: '.text h3 .hide--text',
-    duration: 800,
-    translateY: ['100%', 0],
-    easing: 'easeInOutExpo',
-});
+// anime({
+//     targets: '.text h3 .hide--text',
+//     duration: 800,
+//     translateY: ['100%', 0],
+//     easing: 'easeInOutExpo',
+// });
 
-anime({
-    targets: '#paragraph',
-    duration: 800,
-    translateY: ['300%', 0],
-    delay: 200,
-    easing: 'easeInOutElastic',
-});
+// anime({
+//     targets: '#paragraph',
+//     duration: 800,
+//     translateY: ['300%', 0],
+//     delay: 200,
+//     easing: 'easeInOutElastic',
+// });
 
 anime.timeline({ loop: false }).add({
     targets: '.button',
