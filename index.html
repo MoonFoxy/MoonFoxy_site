@@ -1,81 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>🌙Tsukiko</title>
-        <link rel="apple-touch-icon" sizes="57x57" href="favicons/main/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="favicons/main/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="favicons/main/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="favicons/main/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="favicons/main/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="favicons/main/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="favicons/main/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="favicons/main/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="favicons/main/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="favicons/main/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicons/main/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="favicons/main/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicons/main/favicon-16x16.png">
-        <link rel="manifest" href="favicons/main/manifest.json">
-        <meta name="msapplication-TileColor" content="#E01C34"> <!-- #185ADB -->
-        <meta name="msapplication-TileImage" content="favicons/main/ms-icon-144x144.png">
-        <meta name="theme-color" content="#E01C34"> <!-- #185ADB -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🌙Moonfoxy</title>
 
-        <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    </head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#F3D9C8" />
 
-    <body>
-        <div id="particles-js"></div>
-        <canvas class="fireworks"></canvas>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- Material Icons -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons&display=swap" rel="stylesheet" /> -->
+    <!-- Roboto -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" /> -->
+    <!-- Roboto Mono -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" /> -->
+  </head>
 
-        <header>
-            <!-- <div class="marquee"><span>Бегущая строка в рамочке на цветном фоне</span></div> -->
-        </header>
-
-            <!-- =============================== STICKER =============================== -->
-            <div class="sticker unselectable">
-                <img id="sticker" src="images/sticker.png" alt="Sticker">
-            </div>
-
-            <!-- =============================== AUTHOR =============================== -->
-            <div class="author unselectable">
-                <img class="unselectable" id="avatar" src="https://www.gravatar.com/avatar/e87b4751a4a94ceffeb9ff31cc008b73.png?s=1024&d=https%3A%2F%2Ftsukiko.tech%2Fimages%2Favatar.png" alt="Avatar">
-                <p>От суки! Как? ୧((#Φ益Φ#))୨</p>
-                <div class="button-container"  href="https://github.com/MoonFoxy">
-                    <a class='button -regular center' style="background: #161B22" href="https://github.com/MoonFoxy" target="_blank"><i class="fab fa-github"></i></a>
-                    <a class='button -regular center' style="background: #5865F2" onclick="copyToClipboard('Tsukiko#6595')"><i class="fab fa-discord"></i></a>
-                    <a class='button -regular center' style="background: #2787F5" href="https://vk.com/id293199956" target="_blank"><i class="fab fa-vk"></i></a>
-                    <a class='button -regular center' style="background: #26A6E5" href="https://t.me/MoonFoxy" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a class='button -regular center' style="background: #26ABE1" href="https://twitter.com/_MoonFoxy" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a class='button -regular center' style="background: #ED5F5F" href="mailto:contact@tsukiko.tech"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-
-            <!-- =============================== TEXT =============================== -->
-            <div class="text unselectable">
-                <h1><span class="hide--text">Tsukiko</span></h1>
-                <h2 id="scene"><span data-depth="0.5">月狐</span></h2>
-                <h3>
-                    <span class="hide--text">🌕🦊</span>
-                </h3>
-                <!-- <p>
-                        <span id="paragraph" class="hide--text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae iaculis neque. In pulvinar augue et tortor
-                            laoreet scelerisque. Sed venenatis, lacus a vestibulum dapibus.
-                        </span>
-                    </p> -->
-            </div>
-            <footer>
-                <span class="snow-layer"></span>
-            </footer>
-        </div>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-        <script src="scripts/config/christmas.js"></script>
-        <script src="scripts/animations.js"></script>
-    </body>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
