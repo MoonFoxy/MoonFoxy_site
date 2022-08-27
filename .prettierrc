@@ -2,9 +2,10 @@
   "useTabs": false,
   "tabWidth": 2,
   "singleQuote": true,
-  "trailingComma": "es5",
+  "trailingComma": "all",
   "bracketSpacing": true,
   "semi": true,
+  "endOfLine": "lf",
   "plugins": ["prettier-plugin-svelte"],
   "svelteSortOrder": "scripts-options-markup-styles",
   "svelteIndentScriptAndStyle": true

@@ -15,7 +15,7 @@ import {
 } from './codec';
 
 function stringifyAttributes(
-  attributes: CookieAttributes & { expires?: any }
+  attributes: CookieAttributes & { expires?: any },
 ): string {
   // Copy incoming attributes as to not alter the original object..
   const copyAttr = Object.assign({}, attributes);
@@ -38,7 +38,7 @@ function stringifyAttributes(
       // not including, the first %x3B (";") character.
       // ...
       .map(([key, value]: [string, string | true]) =>
-        value === true ? `; ${key}` : `; ${key}=${value.split(';')[0]}`
+        value === true ? `; ${key}` : `; ${key}=${value.split(';')[0]}`,
       )
       .join('')
   );
@@ -59,18 +59,18 @@ export const DEFAULT_ATTRIBUTES: CookieAttributesConfig = Object.freeze({
 });
 
 export function setCookie<
-  T extends string | number | boolean | undefined | null
+  T extends string | number | boolean | undefined | null,
 >(name: string, value: T): string;
 
 export function setCookie<
-  T extends string | number | boolean | undefined | null
+  T extends string | number | boolean | undefined | null,
 >(name: string, value: T, attributes: CookieAttributes): string;
 
 export function setCookie<T extends Record<string, unknown>>(
   name: string,
   value: T,
   attributes: CookieAttributes | undefined,
-  { encodeValue, encodeName }: CookieEncoding<T>
+  { encodeValue, encodeName }: CookieEncoding<T>,
 ): string;
 
 export function setCookie(
@@ -80,11 +80,11 @@ export function setCookie(
   {
     encodeValue = defaultValueEncoder,
     encodeName = defaultNameEncoder,
-  }: CookieEncoding<string | number | boolean | undefined | null> = {}
+  }: CookieEncoding<string | number | boolean | undefined | null> = {},
 ): string {
   return (document.cookie = `${encodeName(name)}=${encodeValue(
     value,
-    name
+    name,
   )}${stringifyAttributes(attributes)}`);
 }
 
@@ -95,7 +95,7 @@ type GetReturn<T, R> = [T] extends [undefined]
 function get<T extends string | undefined, U>(
   name: T,
   decodeValue: Decoder<U>,
-  decodeName: Decoder<string>
+  decodeName: Decoder<string>,
 ): GetReturn<T, U> {
   const scan = /(?:^|; )([^=]*)=([^;]*)/g;
   const jar: any = {};
@@ -117,7 +117,7 @@ export function getCookie(name: string): string | undefined;
 
 export function getCookie<T extends Record<string, unknown>>(
   name: string,
-  { decodeValue, decodeName }: CookieDecoding<T>
+  { decodeValue, decodeName }: CookieDecoding<T>,
 ): T | undefined;
 
 export function getCookie(
@@ -125,20 +125,20 @@ export function getCookie(
   {
     decodeValue = defaultValueDecoder,
     decodeName = defaultNameDecoder,
-  }: CookieDecoding<string> = {}
+  }: CookieDecoding<string> = {},
 ): string | undefined {
   return get(name, decodeValue, decodeName);
 }
 
 export function removeCookie(
   name: string,
-  attributes: CookieAttributes = DEFAULT_ATTRIBUTES
+  attributes: CookieAttributes = DEFAULT_ATTRIBUTES,
 ): void {
   setCookie(
     name,
     '',
     Object.assign({}, attributes, {
       expires: -1,
-    })
+    }),
   );
 }
