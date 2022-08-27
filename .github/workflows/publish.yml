@@ -24,7 +24,7 @@ jobs:
 
       - name: Build
         run: |
-          yarn build:modern
+          yarn build
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
