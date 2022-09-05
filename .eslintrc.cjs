@@ -1,84 +1,68 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 2020,
+    tsconfigRootDir: __dirname,
+    project: ['./tsconfig.json'],
+    extraFileExtensions: ['.svelte'],
   },
   extends: [
-    'eslint:recommended',
+    'airbnb-base',
+    'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:eslint-comments/recommended',
     'plugin:@ota-meshi/svelte/recommended',
     'plugin:prettier/recommended',
     'prettier',
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
-    parser: '@typescript-eslint/parser',
-    extraFileExtensions: ['.svelte'],
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
   },
-  plugins: ['@typescript-eslint', 'prettier', 'unused-imports', 'json-format'],
   overrides: [
     {
       files: ['*.svelte'],
-      parser: 'svelte-eslint-parser',
+      processor: 'svelte3/svelte3',
       rules: {
         'prettier/prettier': 'error',
       },
     },
   ],
+  settings: {
+    'svelte3/typescript': () => require('typescript'),
+    'svelte3/named-blocks': true,
+  },
+  plugins: [
+    '@typescript-eslint',
+    'eslint-comments',
+    'svelte3',
+    'prettier',
+    'unused-imports',
+    'json-format',
+  ],
+  ignorePatterns: ['node_modules/', '*.cjs', 'svelte.config.js', 'vite.config.ts'],
   rules: {
     'unused-imports/no-unused-imports': 'error',
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    eqeqeq: 'error',
-    'max-len': [
-      'error',
-      {
-        code: 80,
-        ignoreTemplateLiterals: true,
-        ignoreStrings: true,
-        ignoreUrls: true,
-      },
-    ],
-    'no-param-reassign': ['error', { props: false }],
-    'no-restricted-syntax': 'off',
-    'no-await-in-loop': 'off',
-    'no-trailing-spaces': [
-      'error',
-      {
-        ignoreComments: true,
-      },
-    ],
-    indent: ['error', 2],
-    'linebreak-style': ['error', 'unix'],
-    quotes: 'off',
-    semi: ['error', 'always'],
-    'eol-last': ['error', 'always'],
-    'no-unused-vars': 'off',
-    'no-undef': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
-    'no-empty': [
-      'error',
-      {
-        allowEmptyCatch: true,
-      },
-    ],
-    '@typescript-eslint/no-explicit-any': 'off',
-  },
-  settings: {
+    // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
+    'import/prefer-default-export': 'off',
+    'import/no-default-export': 'error',
+    // It's not accurate in the monorepo style
+    'import/no-extraneous-dependencies': 'off',
+    // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/imports.js#L139
     'import/extensions': [
       'error',
-      'always',
+      'ignorePackages',
       {
         js: 'never',
+        mjs: 'never',
+        jsx: 'never',
         ts: 'never',
-        worker: 'never',
-        svelte: 'always',
+        tsx: 'never',
       },
     ],
-    // 'svelte3/typescript': true,
-    // 'svelte3/named-blocks': true
   },
 };

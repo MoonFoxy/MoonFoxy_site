@@ -1,6 +1,13 @@
 {
-  "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.localesPaths": [
+    "src/locales"
+  ],
   "i18n-ally.keystyle": "nested",
-  "eslint.validate": ["javascript", "typescript", "svelte", "json"],
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "svelte",
+    "json"
+  ],
   "typescript.preferences.importModuleSpecifier": "relative"
 }

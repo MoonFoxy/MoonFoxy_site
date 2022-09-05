@@ -1,12 +1,21 @@
 {
-  "useTabs": false,
-  "tabWidth": 2,
-  "singleQuote": true,
-  "trailingComma": "all",
-  "bracketSpacing": true,
-  "semi": true,
-  "endOfLine": "lf",
-  "plugins": ["prettier-plugin-svelte"],
-  "svelteSortOrder": "scripts-options-markup-styles",
-  "svelteIndentScriptAndStyle": true
+  "arrowParens": "avoid",
+	"useTabs": false,
+	"singleQuote": true,
+	"tabWidth": 2,
+	"trailingComma": "all",
+	"bracketSpacing": true,
+	"printWidth": 100,
+	"semi": true,
+	"endOfLine": "lf",
+	"plugins": ["prettier-plugin-svelte"],
+	"pluginSearchDirs": ["."],
+  "svelteSortOrder": "options-styles-scripts-markup",
+  "svelteStrictMode": false,
+  "svelteBracketNewLine": true,
+  "svelteIndentScriptAndStyle": true,
+	"overrides": [
+    { "files": "*.svelte", "options": { "parser": "svelte" } },
+    { "files": "*.ts", "options": { "parser": "typescript" } }
+  ]
 }
