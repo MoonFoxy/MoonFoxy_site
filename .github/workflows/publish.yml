@@ -24,7 +24,7 @@ jobs:
 
       - name: Build
         run: |
-          yarn build
+          CF_PAGES=1 yarn build
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
@@ -32,5 +32,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: moonfoxy-site
-          directory: ./dist
+          directory: .svelte-kit/cloudflare
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
