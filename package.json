@@ -25,7 +25,9 @@
     "preview": "vite preview",
     "test": "playwright test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gsap": "^3.11.1"
+  },
   "devDependencies": {
     "@ota-meshi/eslint-plugin-svelte": "^0.34.1",
     "@playwright/test": "^1.25.0",
