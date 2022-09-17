@@ -10,8 +10,6 @@
   import Loading from '$lib/components/Loading.svelte';
 
   $pair = getRandomPair();
-  const [primary, secondary] = $pair;
-
   startClient();
 
   const timeout = 1000;
@@ -23,7 +21,7 @@
 
 <main>
   {#if !$page.error && ($isLoading || delayedPreloading)}
-    <Loading background={primary} color={secondary} />
+    <Loading />
   {:else}
     <slot />
   {/if}

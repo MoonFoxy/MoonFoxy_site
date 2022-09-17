@@ -1,7 +1,8 @@
 <script lang="ts">
   import { t } from 'svelte-i18n';
   import { pair } from '$lib/modules/color';
-  const [background, color] = $pair;
+
+  let [background, color] = $pair;
 </script>
 
 <svelte:head>
