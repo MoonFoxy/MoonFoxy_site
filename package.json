@@ -26,6 +26,7 @@
     "test": "playwright test"
   },
   "dependencies": {
+    "css-doodle": "^0.29.1",
     "gsap": "^3.11.1"
   },
   "devDependencies": {

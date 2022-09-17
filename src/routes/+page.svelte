@@ -1,5 +1,7 @@
 <script lang="ts">
   import { t } from 'svelte-i18n';
+  import { pair } from '$lib/modules/color';
+  const [background, color] = $pair;
 </script>
 
 <svelte:head>
@@ -7,11 +9,11 @@
   <meta name="description" content="Moonfoxy home page" />
 </svelte:head>
 
-<div class="bg-black flex flex-col items-center justify-center h-screen">
-  <h1 class="text-white text-3xl font-bold underline">
+<div style:background class="flex flex-col items-center justify-center h-screen">
+  <h1 style:color class="text-3xl font-bold underline">
     {$t('hello_world')}
   </h1>
-  <h1 class="text-white">Welcome to your library project</h1>
-  <p class="text-white">Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-  <p class="text-white">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+  <h1 style:color>Welcome to your library project</h1>
+  <p style:color>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
+  <p style:color>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </div>

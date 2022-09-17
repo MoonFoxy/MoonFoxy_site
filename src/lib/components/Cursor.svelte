@@ -12,12 +12,15 @@
   const size2 = size / 2;
   const sizeSq2 = sizeSq / 2;
 
-  function moveDetect() {
-    cursor.style.display = 'block';
-    cursorSq.style.display = 'block';
-  }
-
+  let once = true;
   function mouseMove(event: MouseEvent) {
+    if (once) {
+      cursor.style.display = 'block';
+      cursorSq.style.display = 'block';
+      once = false;
+      Object.freeze(once);
+    }
+
     let cursorX = event.clientX - size2;
     let cursorY = event.clientY - size2;
     if (event.clientX < size2) {
@@ -71,9 +74,8 @@
 <svelte:window
   bind:innerWidth={width}
   bind:innerHeight={height}
-  on:mousemove|once="{moveDetect}"
-  on:mousedown="{mouseDown}"
   on:mousemove="{mouseMove}"
+  on:mousedown="{mouseDown}"
   on:mouseup="{mouseUp}" />
 
 <div id="cursor"
